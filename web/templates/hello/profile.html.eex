@@ -1,10 +1,35 @@
 
-<div id="map_canvas" style="height:300px;"></div><h1><%= @uniqueId %></h1>
-<h2><%= @forenames %></h2>
-<h3>Missing since: <%= @missing_date %></h3>
+
+<div id="profile">
+	<div id="imagery">
+	<img class="_4jhq img" height="160" src="/images/profile/<%= @uniqueId %>.gif" onerror="this.src='/images/profile/noImage.gif'" width="160" alt="">
+	</div>
+</div>
+<div id="data">
+	<h1><%= @uniqueId %></h1>
+	<h2><%= @forenames %></h2>
+	<h3>Missing since: <%= @missing_date %></h3>
+	<span id="Status"></span>
+	<span id="Category"></span>
+	<span id="Output_Area"></span>
+	<span id="Accomodation_Type"></span>
+	<span id="Gender"></span>
+	<span id="Birth_Year"></span>
+	<span id="Status_Prior_To_Dormant"></span>
+	<span id="Output_Area_CenX_EPSG27700"></span>
+	<span id="Date_Status_Changed_To_Unconfi"></span>
+	<span id="Date_Went_Missing"></span>
+	<span id="long"></span>
+	<span id="lat"></span>
+	<span id="Date_Record_Updated"></span>
+	<span id="Output_Area_CenY_EPSG27700"></span>
+	<span id="Borough"></span>
+	<span id="Unique_ID"></span>
+	<span id="Forenames"></span>
+	<span id="Surname"></span>
+	<span id="Date_Last_Seen"></span>
+</div>
 
 
-<img class="_4jhq img" height="160" src="https://heatherchristenaschmidt.files.wordpress.com/2011/09/facebook_no_profile_pic2-jpg.gif?w=960" width="160" alt="">
-<img class="scaledImageFitWidth img" src="https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-0/s600x600/1656283_817051564978164_818934869_n.jpg?oh=021fb43cdf4bbc9f821c0bdf85bdf7cd&amp;oe=589B8213" alt="&quot;We shouldn't stop travelling!
 
-PS: Esta foto es de 2010, no me he ido de viaje todavía. Sigo en Manchester, quien quiera viajar por aquí ya sabe!&quot;" width="297" height="223"></div></div><div class="_xcx" style="top:199px; left:0px; width: 98px; height: 98px;"><div class="uiScaledImageContainer" style="width:98px;height:98px;">
+<div id="map_canvas" class="cf"></div>

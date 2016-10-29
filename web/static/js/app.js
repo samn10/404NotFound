@@ -25,17 +25,40 @@ export var App = {
     var jQuery = require('jquery');
     var GoogleMapsLoader = require('google-maps');
     GoogleMapsLoader.KEY = 'AIzaSyCP1cMFGxLSYdTbP9-r9TdGOn7Ft1E6JCE';
+	GoogleMapsLoader.LIBRARIES = ['visualization'];
+	GoogleMapsLoader.load(function(GoogleMaps){
 
-GoogleMapsLoader.load(function(GoogleMaps){
-
-		var myLatlng = new google.maps.LatLng(-41.2443701,174.7618546);
+		var myLatlng = new google.maps.LatLng(37.774546, -122.433523);
 		var mapOptions = {
-		zoom: 9,
-		center: myLatlng
+			zoom: 9,
+			center: myLatlng
 		}
 
-		new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+		var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
 
+
+			/* Data points defined as an array of LatLng objects */
+			var heatmapData = [
+			  new google.maps.LatLng(37.782, -122.447),
+			  new google.maps.LatLng(37.782, -122.445),
+			  new google.maps.LatLng(37.782, -122.443),
+			  new google.maps.LatLng(37.782, -122.441),
+			  new google.maps.LatLng(37.782, -122.439),
+			  new google.maps.LatLng(37.782, -122.437),
+			  new google.maps.LatLng(37.782, -122.435),
+			  new google.maps.LatLng(37.785, -122.447),
+			  new google.maps.LatLng(37.785, -122.445),
+			  new google.maps.LatLng(37.785, -122.443),
+			  new google.maps.LatLng(37.785, -122.441),
+			  new google.maps.LatLng(37.785, -122.439),
+			  new google.maps.LatLng(37.785, -122.437),
+			  new google.maps.LatLng(37.785, -122.435)
+			];
+
+		var heatmap = new google.maps.visualization.HeatmapLayer({
+  			data: heatmapData
+		});
+		heatmap.setMap(map);
 	}); 
 
   }

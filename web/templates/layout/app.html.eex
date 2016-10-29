@@ -17,7 +17,7 @@
       <header class="header">
         <nav role="navigation">
           <ul class="nav nav-pills pull-right">
-            <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
+            <li><a href="http://www.rentalcars.com">by Rentalcars.com</a></li>
           </ul>
         </nav>
         <span class="title"><b>404</b> Person Not Found</span>
@@ -26,12 +26,13 @@
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
 
+
+    </div> <!-- /container -->
+
+    <script>require("web/static/js/app").App.run()</script>
+    
       <main role="main">
         <%= render @view_module, @view_template, assigns %>
       </main>
-
-    </div> <!-- /container -->
-    
-    <script>require("web/static/js/app").App.run()</script>
   </body>
 </html>
