@@ -22,7 +22,11 @@ import "phoenix_html"
 
 export var App = {
   run: function(){
-    console.log("Hello!")
+    var jQuery = require('jquery');
+    var GoogleMapsLoader = require('google-maps')
+    GoogleMapsLoader.load(function(google) {
+	    new google.maps.Map(jQuery('#map_canvas'));
+	});
   }
 }
 

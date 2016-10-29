@@ -41,3 +41,4 @@ config :hello_phoenix, HelloPhoenix.Repo,
   database: "hello_phoenix_dev",
   hostname: "localhost",
   pool_size: 10
+
