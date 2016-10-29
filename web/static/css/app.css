@@ -9,7 +9,12 @@ span.title {font-size: 40px}
 	}
 
 #map_canvas{height: 400px;padding-top:10px;}
-#data{float: left;
+#data{float: left;display: inline-block; 
   width: 50%;}
-#imagery{float: left;
+#imagery{float: left;display: inline-block; 
   width: 50%;}
+
+#profile {
+    text-align: center;
+    width: 90%;  
+}

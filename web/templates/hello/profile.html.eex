@@ -1,35 +1,34 @@
 
-
 <div id="profile">
 	<div id="imagery">
-	<img class="_4jhq img" height="160" src="/images/profile/<%= @uniqueId %>.gif" onerror="this.src='/images/profile/noImage.gif'" width="160" alt="">
+		<img class="_4jhq img" height="160" src="/images/profile/<%= @uniqueId %>.jpg" onerror="this.src='/images/profile/noImage.gif'" width="160" alt="">
 	</div>
-</div>
-<div id="data">
-	<h1><%= @uniqueId %></h1>
-	<h2><%= @forenames %></h2>
-	<h3>Missing since: <%= @missing_date %></h3>
-	<span id="Status"></span>
-	<span id="Category"></span>
-	<span id="Output_Area"></span>
-	<span id="Accomodation_Type"></span>
-	<span id="Gender"></span>
-	<span id="Birth_Year"></span>
-	<span id="Status_Prior_To_Dormant"></span>
-	<span id="Output_Area_CenX_EPSG27700"></span>
-	<span id="Date_Status_Changed_To_Unconfi"></span>
-	<span id="Date_Went_Missing"></span>
-	<span id="long"></span>
-	<span id="lat"></span>
-	<span id="Date_Record_Updated"></span>
-	<span id="Output_Area_CenY_EPSG27700"></span>
-	<span id="Borough"></span>
-	<span id="Unique_ID"></span>
-	<span id="Forenames"></span>
-	<span id="Surname"></span>
-	<span id="Date_Last_Seen"></span>
-</div>
+	<div id="data">
+		<h1><%= @uniqueId %></h1>
+		<h2><%= @forenames %></h2>
+		<h3>Missing since: <%= @missing_date %></h3>
+		<span id="Status"></span>
+		<span id="Category"></span>
+		<span id="Output_Area"></span>
+		<span id="Accomodation_Type"></span>
+		<span id="Gender"></span>
+		<span id="Birth_Year"></span>
+		<span id="Status_Prior_To_Dormant"></span>
+		<span id="Output_Area_CenX_EPSG27700"></span>
+		<span id="Date_Status_Changed_To_Unconfi"></span>
+		<span id="Date_Went_Missing"></span>
+		<span id="long"></span>
+		<span id="lat"></span>
+		<span id="Date_Record_Updated"></span>
+		<span id="Output_Area_CenY_EPSG27700"></span>
+		<span id="Borough"></span>
+		<span id="Unique_ID"></span>
+		<span id="Forenames"></span>
+		<span id="Surname"></span>
+		<span id="Date_Last_Seen"></span>
+	</div>
 
+</div>
 
 
 <div id="map_canvas" class="cf"></div>

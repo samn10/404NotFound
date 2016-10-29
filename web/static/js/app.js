@@ -61,6 +61,17 @@ export var App = {
 		heatmap.setMap(map);
 	}); 
 
+	// var clockwork = require('clockwork')({key:'3a13510c8868f5ac8d634e5a46f4c120baa689ef'});
+
+	// clockwork.sendSms({ To: '07481278962', Content: 'Test!'}, 
+	//   function(error, resp) {
+	//     if (error) {
+	//         console.log('Something went wrong', error);
+	//     } else {
+	//         console.log('Message sent',resp.responses[0].id);
+	//     }
+	// });
+
   }
 }
 
