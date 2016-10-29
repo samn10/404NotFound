@@ -2,13 +2,13 @@
 
 <div id="profile">
 	<div id="imagery">
-	<img class="_4jhq img" height="160" src="/images/profile/<%= @uniqueId %>.gif" onerror="this.src='/images/profile/noImage.gif'" width="160" alt="">
+	<!-- <img class="_4jhq img" height="160" src="/images/profile/<%= @uniqueId %>.gif" onerror="this.src='/images/profile/noImage.gif'" width="160" alt=""> -->
 	</div>
 </div>
 <div id="data">
 	<h1><%= @uniqueId %></h1>
-	<h2><%= @forenames %></h2>
-	<h3>Missing since: <%= @missing_date %></h3>
+	<h2 id="Forenames"></h2>
+	<h3 >Missing since: <span id="Date_Went_Missing"></span></h3>
 	<span id="Status"></span>
 	<span id="Category"></span>
 	<span id="Output_Area"></span>
@@ -33,3 +33,5 @@
 
 
 <div id="map_canvas" class="cf"></div>
+
+<script>require("web/static/js/profile").App.run("<%= @uniqueId %>")</script>
