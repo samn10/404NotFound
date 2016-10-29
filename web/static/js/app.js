@@ -23,10 +23,21 @@ import "phoenix_html"
 export var App = {
   run: function(){
     var jQuery = require('jquery');
-    var GoogleMapsLoader = require('google-maps')
-    GoogleMapsLoader.load(function(google) {
-	    new google.maps.Map(jQuery('#map_canvas'));
-	});
+    var GoogleMapsLoader = require('google-maps');
+    GoogleMapsLoader.KEY = 'AIzaSyCP1cMFGxLSYdTbP9-r9TdGOn7Ft1E6JCE';
+
+GoogleMapsLoader.load(function(GoogleMaps){
+
+		var myLatlng = new google.maps.LatLng(-41.2443701,174.7618546);
+		var mapOptions = {
+		zoom: 9,
+		center: myLatlng
+		}
+
+		new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+
+	}); 
+
   }
 }
 
