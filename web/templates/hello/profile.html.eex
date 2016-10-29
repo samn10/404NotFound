@@ -1,0 +1,10 @@
+<h1><%= @uniqueId %></h1>
+<h2><%= @forenames %></h2>
+<h3>Missing since: <%= @missing_date %></h3>
+
+
+<img class="_4jhq img" height="160" src="https://heatherchristenaschmidt.files.wordpress.com/2011/09/facebook_no_profile_pic2-jpg.gif?w=960" width="160" alt="">
+<img class="scaledImageFitWidth img" src="https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-0/s600x600/1656283_817051564978164_818934869_n.jpg?oh=021fb43cdf4bbc9f821c0bdf85bdf7cd&amp;oe=589B8213" alt="&quot;We shouldn't stop travelling!
+
+PS: Esta foto es de 2010, no me he ido de viaje todavía. Sigo en Manchester, quien quiera viajar por aquí ya sabe!&quot;" width="297" height="223"></div></div><div class="_xcx" style="top:199px; left:0px; width: 98px; height: 98px;"><div class="uiScaledImageContainer" style="width:98px;height:98px;">
+<div id="map_canvas" style="height:300px;"></div>

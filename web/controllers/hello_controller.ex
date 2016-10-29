@@ -5,7 +5,16 @@ defmodule HelloPhoenix.HelloController do
     render conn, "index.html"
   end
 
-	def show(conn, %{"messenger" => messenger}) do
-	  render conn, "show.html", messenger: messenger
+	def profile(conn, %{"id" => id}) do
+	conn
+    	|> assign(:uniqueId, id)
+    	|> assign(:surname, "NavajoWhite")
+    	|> assign(:forenames, "PaleVioletRed1067821")
+    	|> assign(:gender, "M")
+    	|> assign(:birthyear, "1998")
+    	|> assign(:status, "Returned")
+    	|> assign(:missing_date, "30/11/2016")
+	  	|> render("profile.html")
 	end
+
 end
