@@ -1,7 +1,7 @@
 
 <div id="profile">
 	<div id="imagery">
-	<!-- <img class="_4jhq img" height="160" src="/images/profile/<%= @uniqueId %>.gif" onerror="this.src='/images/profile/noImage.gif'" width="160" alt=""> -->
+	<img id="image" height="160" onerror="this.src='/images/profile/noImage.gif'" width="160" alt="">
 	</div>
 </div>
 <div id="data">

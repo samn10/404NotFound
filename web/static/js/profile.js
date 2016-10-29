@@ -5,8 +5,7 @@ export var App = {
    	 console.log("HELLO");
 
    	 jQuery.get( location, function( data, status ) {
-   	 		console.log(data);
-		  //alert( "Data Loaded: " + data + "   " + data.Status)
+		  jQuery("#image").attr('src', data.images);
 		  jQuery("#Status").text(data.Status);
 		  jQuery("#Category").text(data.Category);
 		  jQuery("#Output_Area").text(data.Output_Area);
