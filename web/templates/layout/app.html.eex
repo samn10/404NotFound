@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>404 Person Not Found!</title>
+    <title>404 - Person Not Found!</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </head>
@@ -20,7 +20,7 @@
             <li><a href="http://www.rentalcars.com">by Rentalcars.com</a></li>
           </ul>
         </nav>
-        <span class="title"><b>404</b> Person Not Found</span>
+        <span class="title"><b>404</b> - Person Not Found</span>
       </header>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
