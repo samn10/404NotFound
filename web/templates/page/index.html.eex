@@ -1,3 +1,8 @@
 <script>require("web/static/js/app").App.profiles()</script>
 
+<h2 style='margin-bottom:-2px; text-align:center;'>Help us to find these people</h2>
 <div id="map_canvas" class="cf"></div>
+<div id="images_carousel" style='text-align:center;'></div>
+
+
+<small style='display:block; opacity: 0.5; margin-top:20px; width:100%; text-align:center;'>Handcrafted on HackManchester 2017 ♥</small>

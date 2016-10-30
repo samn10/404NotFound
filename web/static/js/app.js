@@ -194,6 +194,7 @@ export var App = {
                 var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
                 var markers = [];
                 var heat_map_info = [];
+                var images = [];
                 var prev_infowindow;
                 var bounds = new google.maps.LatLngBounds();
                 var location = "http://192.168.226.62/404notfound-server/GetNearby?lat=53.546941137914956&long=-2.631838902300045";
@@ -210,7 +211,7 @@ export var App = {
                             heat_map_info.push(data[index].heat_map_info[i]);
                         });
                         var infowindow = new google.maps.InfoWindow({
-                            content: '<a target=_blank" href="/profile/' + data[index].Unique_ID + '">' + data[index].Forenames + ' ' + data[index].Surname + '</a>'
+                            content: '<a target=_blank" href="/profile/' + data[index].Unique_ID + '">' + data[index].Forenames + ' ' + data[index].Surname + '</a><br><img style="display:block;margin-left:auto;margin-right:auto;" width="80" src="' + data[index].images[0] + '">'
                         });
                         marker.addListener('click', function() {
                             if (prev_infowindow) {
@@ -226,19 +227,33 @@ export var App = {
 
                         bounds.extend(marker.getPosition());
                         map.fitBounds(bounds);
-                    });
-                    var heatmapData = [];
-                    for (var i=0; i<heat_map_info.length; i++){
-                    	var latAux = heat_map_info[i].lat;
-                    	var longAux = heat_map_info[i].long;
-                    	heatmapData.push(new google.maps.LatLng(latAux,longAux));
-                    }
 
-                    var heatmap = new google.maps.visualization.HeatmapLayer({
-                        data: heatmapData,
-                        map: map
-                    });
-                    heatmap.setMap(map);
+                        images.push(data[index].images[0]);
+
+               		 });
+
+                	console.log(markers.length);
+	                var heatmapData = [];
+	                for (var i=0; i<heat_map_info.length; i++){
+	                	var latAux = heat_map_info[i].lat;
+	                	var longAux = heat_map_info[i].long;
+	                	heatmapData.push(new google.maps.LatLng(latAux,longAux));
+	                }
+
+	                var heatmap = new google.maps.visualization.HeatmapLayer({
+	                    data: heatmapData,
+	                    map: map
+	                });
+	                heatmap.setMap(map);
+	                var counter = 0;
+	                for (var i=0; i<images.length; i++){
+	                	if (counter<6){
+	                		if (images[i] != "http://2016rotarypresidentialconferencemanila.org/wp-content/uploads/2015/05/user-icon-silhouette.png"){
+	                			jQuery('#images_carousel').append('<img style="display:inline-block;padding:7px;height:230px;" src="'+images[i]+'">');
+	                			counter++;
+	                		}
+	                	}
+	            	}
 
 
                 });
