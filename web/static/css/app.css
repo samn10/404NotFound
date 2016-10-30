@@ -2,7 +2,6 @@
 span.title {font-size: 40px}
 .cf {
 	display: block;
-	font-size: 0;
 	content: " ";
 	clear: both;
 	height: 0;
@@ -10,7 +9,7 @@ span.title {font-size: 40px}
 
 #map_canvas{height: 400px;padding-top:10px;}
 #data{float: left;display: inline-block; 
-  width: 50%;}
+  width: 30%; margin-left: 160px;}
 #imagery{float: left;display: inline-block; 
   width: 50%;}
 
@@ -18,3 +17,9 @@ span.title {font-size: 40px}
     text-align: center;
     width: 90%;  
 }
+
+#data span.tr {display: block}
+#Borough {text-align:center;    background-color: lightblue;
+    font-size: 18px;}
+
+

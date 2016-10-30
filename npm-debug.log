@@ -24,33 +24,33 @@
 13 silly mapToRegistry uri https://registry.npmjs.org/zlib
 14 verbose request uri https://registry.npmjs.org/zlib
 15 verbose request no auth needed
-16 info attempt registry request try #1 at 9:59:17 PM
-17 verbose request id 679888cb76e53083
+16 info attempt registry request try #1 at 12:54:21 AM
+17 verbose request id b10c47a2db0a7d12
 18 verbose etag "5ZD8OZO6M8FVHQHJHDOOR2QN9"
 19 http request GET https://registry.npmjs.org/zlib
 20 http 304 https://registry.npmjs.org/zlib
-21 verbose headers { date: 'Sat, 29 Oct 2016 20:59:10 GMT',
+21 verbose headers { date: 'Sat, 29 Oct 2016 23:54:12 GMT',
 21 verbose headers   via: '1.1 varnish',
 21 verbose headers   'cache-control': 'max-age=300',
 21 verbose headers   etag: '"5ZD8OZO6M8FVHQHJHDOOR2QN9"',
-21 verbose headers   age: '119',
+21 verbose headers   age: '0',
 21 verbose headers   connection: 'keep-alive',
-21 verbose headers   'x-served-by': 'cache-lcy1135-LCY',
-21 verbose headers   'x-cache': 'HIT',
-21 verbose headers   'x-cache-hits': '1',
-21 verbose headers   'x-timer': 'S1477774750.654824,VS0,VE0',
+21 verbose headers   'x-served-by': 'cache-lcy1144-LCY',
+21 verbose headers   'x-cache': 'MISS',
+21 verbose headers   'x-cache-hits': '0',
+21 verbose headers   'x-timer': 'S1477785252.834687,VS0,VE343',
 21 verbose headers   vary: 'Accept-Encoding' }
 22 silly get cb [ 304,
-22 silly get   { date: 'Sat, 29 Oct 2016 20:59:10 GMT',
+22 silly get   { date: 'Sat, 29 Oct 2016 23:54:12 GMT',
 22 silly get     via: '1.1 varnish',
 22 silly get     'cache-control': 'max-age=300',
 22 silly get     etag: '"5ZD8OZO6M8FVHQHJHDOOR2QN9"',
-22 silly get     age: '119',
+22 silly get     age: '0',
 22 silly get     connection: 'keep-alive',
-22 silly get     'x-served-by': 'cache-lcy1135-LCY',
-22 silly get     'x-cache': 'HIT',
-22 silly get     'x-cache-hits': '1',
-22 silly get     'x-timer': 'S1477774750.654824,VS0,VE0',
+22 silly get     'x-served-by': 'cache-lcy1144-LCY',
+22 silly get     'x-cache': 'MISS',
+22 silly get     'x-cache-hits': '0',
+22 silly get     'x-timer': 'S1477785252.834687,VS0,VE343',
 22 silly get     vary: 'Accept-Encoding' } ]
 23 verbose etag https://registry.npmjs.org/zlib from cache
 24 verbose get saving zlib to /Users/gomezm/.npm/registry.npmjs.org/zlib/.cache.json

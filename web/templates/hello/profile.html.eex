@@ -1,37 +1,41 @@
+<script>require("web/static/js/app").App.run("<%= @uniqueId %>")</script>
 
 <div id="profile">
 	<div id="imagery">
-	<img id="image" height="160" onerror="this.src='/images/profile/noImage.gif'" width="160" alt="">
+
+		<h4 id="Name"></h4>
+		<img id="image" height="160" onerror="this.src='/images/profile/noImage.gif'" width="160" alt="">
+		Born in <span class="tr"  id="Birth_Year"></span>
 	</div>
 </div>
 <div id="data">
-	<h1><%= @uniqueId %></h1>
-	<h2 id="Forenames"></h2>
-	<h3 >Missing since: <span id="Date_Went_Missing"></span></h3>
-	<span id="Status"></span>
-	<span id="Category"></span>
-	<span id="Output_Area"></span>
-	<span id="Accomodation_Type"></span>
-	<span id="Gender"></span>
-	<span id="Birth_Year"></span>
-	<span id="Status_Prior_To_Dormant"></span>
-	<span id="Output_Area_CenX_EPSG27700"></span>
-	<span id="Date_Status_Changed_To_Unconfi"></span>
-	<span id="Date_Went_Missing"></span>
-	<span id="long"></span>
-	<span id="lat"></span>
-	<span id="Date_Record_Updated"></span>
-	<span id="Output_Area_CenY_EPSG27700"></span>
-	<span id="Borough"></span>
-	<span id="Unique_ID"></span>
-	<span id="Forenames"></span>
-	<span id="Surname"></span>
-	<span id="Date_Last_Seen"></span>
+	<div id="stillMissing">
+		<h4 >Days missing: <span id="Days_Missing"></span></h4>
+		<span class="tr"  id="Date_Record_Created"></span>
+		<span class="tr"  id="Date_Went_Missing"></span>
+		<span class="tr"  id="Category"></span>
+		<span class="tr"  id="Accomodation_Type"></span>
+		<h4>Help us to find them by:</h4>
+		<img id="image" src='/images/share.png'" style="margin-left: -5px; margin-top: -15px;" width="160" alt="">
+
+	<form style="margin-top: 0px; width: 95px;" action="http://192.168.226.62/404notfound-server/AddSubscription" method="GET">
+
+  Sms alerts: <input type="text" name="phone_number">
+
+  <input type="hidden" name="Unique_ID" value="<%= @uniqueId %>">
+  
+  <input type="submit" style="float: right" value="Submit">
+</form>
+	</div>
+
+	<div id="found" style="display:none;">
+		<span style="font-size:70px; display:inline-block;" >Found!</span>
+		<span style="font-size:30px; display:inline-block;" >Thanks to all for your collaboration</h4>
+	</div>
 </div>
 
+<div>
+	<div id="map_canvas" class="cf"></div>
+	<div id="Borough"></div>
+	<span class="tr" style="float: right"  id="Date_Record_Updated">Updated: </span>
 </div>
-
-
-<div id="map_canvas" class="cf"></div>
-
-<script>require("web/static/js/profile").App.run("<%= @uniqueId %>")</script>

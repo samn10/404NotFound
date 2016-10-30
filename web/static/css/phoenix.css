@@ -10,7 +10,7 @@
 
 /* Space out content a bit */
 body, form, ul, table {
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 20px;
 }
 
@@ -67,7 +67,7 @@ form.link, form.button {
   }
   /* Space out the masthead */
   .header {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
   }
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
