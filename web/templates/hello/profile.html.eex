@@ -2,10 +2,13 @@
 
 <div id="profile">
 	<div id="imagery">
-
 		<h4 id="Name"></h4>
-		<img id="image" height="160" onerror="this.src='/images/profile/noImage.gif'" width="160" alt="">
-		Born in <span class="tr"  id="Birth_Year"></span>
+		<div id="images" style="margin-bottom:10px">
+			<img id="image" height="160" onerror="this.src='/images/profile/noImage.gif'" width="160" alt="">
+
+		</div>
+		<a id="moreImages" href="#" hidden="true">Click here for more photos</a>
+		<p>Born in <span class="tr"  id="Birth_Year"></span></p>
 	</div>
 </div>
 <div id="data">
@@ -16,7 +19,7 @@
 		<span class="tr"  id="Category"></span>
 		<span class="tr"  id="Accomodation_Type"></span>
 		<h4>Help us to find them by:</h4>
-		<img id="image" src='/images/share.png'" style="margin-left: -5px; margin-top: -15px;" width="160" alt="">
+		<img id="imageShare" src='/images/share.png'" style="margin-left: -5px; margin-top: -15px;" width="160" alt="">
 
 	<form style="margin-top: 0px; width: 95px;" action="http://192.168.226.62/404notfound-server/AddSubscription" method="GET">
 
