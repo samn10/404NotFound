@@ -11,7 +11,9 @@ span.title {font-size: 40px}
 #data{float: left;display: inline-block; 
   width: 30%; margin-left: 160px;}
 #imagery{float: left;display: inline-block; 
-  width: 50%;}
+  width: 30%;}
+#imagery{float: left;display: inline-block; 
+  width: 30%;}
 
 #profile {
     text-align: center;
@@ -23,3 +25,19 @@ span.title {font-size: 40px}
     font-size: 18px;}
 
 body {font-family: 'Roboto', sans-serif;}
+
+.note {
+	    background: #f1f1f1;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border: 1px solid #ddd;
+        padding: 2% 2% 2% 15px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 99%;
+    margin-bottom: 10px;
+    background-repeat: no-repeat;
+    background-position: 20px 20px;
+}

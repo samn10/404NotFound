@@ -64,9 +64,15 @@ export var App = {
                 jQuery("#Status").text(data.Status);
                 jQuery.each(data.heat_map_info, function(index) {
                     heat_map_info.push(data.heat_map_info[index]);
-                    		console.log("data.heat_map_info[index");
-                    		console.log(data.heat_map_info[index]);
                 });
+                if (data.notes.length > 0){
+                	jQuery.each(data.notes, function(index) {
+                    	jQuery('#additional_notes').append('<div class="note">' + data.notes[index]+ '</div>');
+                	});
+            	} else {
+            		jQuery("#nonotes").show();
+            	}
+                
 
                 var gender = "";
                 if (data.Gender == "M") {
@@ -155,7 +161,6 @@ export var App = {
                         infowindow.open(map, fakeMarker);
 					});
 
-                    console.log(Object.keys(heatmapData).length);
                     var heatmap = new google.maps.visualization.HeatmapLayer({
                         data: heatmapData
                     });
@@ -233,7 +238,6 @@ export var App = {
 
                		 });
 
-                	console.log(markers.length);
 	                var heatmapData = [];
 	                for (var i=0; i<heat_map_info.length; i++){
 	                	var latAux = heat_map_info[i].lat;

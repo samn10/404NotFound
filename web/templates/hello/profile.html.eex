@@ -36,6 +36,10 @@
 		<span style="font-size:30px; display:inline-block;" >Thanks to all for your collaboration</h4>
 	</div>
 </div>
+	<div id="additional_notes" style="overflow-y: scroll;overflow-x: hidden; height:260px;">
+		<h4>Additional notes:</h4>
+		<span id="nonotes" style="display:none;">We don't have any notes for now</span>
+	</div>
 
 <div>
 	<div id="map_canvas" class="cf"></div>
