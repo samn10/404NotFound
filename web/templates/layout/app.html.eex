@@ -10,6 +10,7 @@
     <title>404 - Person Not Found!</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   </head>
 
   <body>
@@ -17,7 +18,7 @@
       <header class="header">
         <nav role="navigation">
           <ul class="nav nav-pills pull-right">
-            <li><a href="http://www.rentalcars.com">by Rentalcars.com</a></li>
+            <li><a target="_blank" href="http://www.rentalcars.com">by Rentalcars.com</a></li>
           </ul>
         </nav>
         <span class="title"><b>404</b> - Person Not Found</span>
