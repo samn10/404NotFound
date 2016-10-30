@@ -50,7 +50,7 @@ export var App = {
                 jQuery("#Output_Area").text(data.Output_Area);
                 jQuery("#Accomodation_Type").text("Accomodation type: " + data.Accomodation_Type);
                 jQuery("#Gender").text(data.Gender);
-                jQuery("#Birth_Year").text(data.Birth_Year);
+                jQuery("#Birth_Year").text(2016-data.Birth_Year);
                 jQuery("#Status_Prior_To_Dormant").text(data.Status_Prior_To_Dormant);
                 jQuery("#Output_Area_CenX_EPSG27700").text(data.Output_Area_CenX_EPSG27700);
                 jQuery("#Output_Area_CenY_EPSG27700").text(data.Output_Area_CenX_EPSG27700);
@@ -66,7 +66,7 @@ export var App = {
                 });
                 if (data.notes.length > 0){
                 	jQuery.each(data.notes, function(index) {
-                    	jQuery('#additional_notes').append('<div class="note">' + data.notes[index]+ '</div>');
+                    	jQuery('#notesEmpty').prepend('<div class="note">' + data.notes[index]+ '</div>');
                 	});
             	} else {
             		jQuery("#nonotes").show();

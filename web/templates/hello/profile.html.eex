@@ -8,7 +8,7 @@
 
 		</div>
 		<a id="moreImages" href="#" hidden="true">Click here for more photos</a>
-		<p>Born in <span class="tr"  id="Birth_Year"></span></p>
+		<p><span class="tr"  id="Birth_Year"></span> years old</p>
 	</div>
 </div>
 <div id="data">
@@ -32,13 +32,6 @@
 
 	</div>
 
-	<div id="addNotes">
-		<form style="margin-top: 0px; width: 95px;" action="http://192.168.226.62/404notfound-server/AddNote" method="GET" target="_blank">
-		  	<input type="textarea" name="note" placeholder="Add a new note... ">
-		  	<input type="hidden" name="Unique_ID" value="<%= @uniqueId %>">
-			<input type="submit" style="float: right" value="Add Note">
-		</form>
-	</div>
 
 	<div id="found" style="display:none;">
 		<span style="font-size:70px; display:inline-block;" >Found!</span>
@@ -47,6 +40,17 @@
 </div>
 	<div id="additional_notes" style="overflow-y: scroll;overflow-x: hidden; height:260px;">
 		<h4>Additional notes:</h4>
+	<div id="addNotes">
+		<form style="margin: -5px 0px -10px 0px;" action="http://192.168.226.62/404notfound-server/AddNote" method="GET" target="_blank" onsubmit="setTimeout(function() {window.location.reload(true);}, 100);">
+			<input type="submit" style="float: right; margin-right: 5px;" value="Add Note">
+
+			<div style="overflow: hidden; padding-right: .5em;">
+		  	<input style="width: 350px;" type="textarea" name="note" placeholder="Add a new note... ">
+		  	<input type="hidden" name="Unique_ID" value="<%= @uniqueId %>">
+			</div>​
+		</form>
+	</div>
+	<div id="notesEmpty"></div>
 		<span id="nonotes" style="display:none;">We don't have any notes for now</span>
 	</div>
 
@@ -56,12 +60,12 @@
 
 		<!-- <button type="submit" id="Found" formmethod="post" formaction="#">Report as Found</button> -->
 
-		<form action="http://192.168.226.62:8080/404notfound-server/ReportFound" method="GET" target="_blank" onsubmit="setTimeout(function() {window.location.reload(true);}, 100);">
+		<form style="margin: 5px 10px" action="http://192.168.226.62/404notfound-server/ReportFound" method="GET" target="_blank" onsubmit="setTimeout(function() {window.location.reload(true);}, 100);">
 		  <input type="hidden" name="Unique_ID" value="<%= @uniqueId %>">
 		  <input type="submit" value="Report as Found" >
+			<span class="tr" style="float: right"  id="Date_Record_Updated">Updated: </span>
 		</form>	
 
-	<span class="tr" style="float: right"  id="Date_Record_Updated">Updated: </span>
 </div>
 
 
