@@ -1,4 +1,4 @@
-<script>require("web/static/js/app").App.run("<%= @uniqueId %>")</script>
+
 
 <div id="profile">
 	<div id="imagery">
@@ -39,3 +39,5 @@
 	<div id="Borough"></div>
 	<span class="tr" style="float: right"  id="Date_Record_Updated">Updated: </span>
 </div>
+
+<script>require("web/static/js/app").App.run("<%= @uniqueId %>")</script>

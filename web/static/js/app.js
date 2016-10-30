@@ -22,10 +22,12 @@ import "phoenix_html"
 
 export var App = {
   run: function(id){
-    var jQuery = require('jquery');
+  		var jQuery = require('jquery');
+  	jQuery( document ).ready(function() {
 
 	var lat, long;
 	var location = "http://192.168.226.62/404notfound-server/GetProfile?Unique_ID=" + id;
+	var heat_map_info = [];
     jQuery.get( location, function( data, status ) {
 		  jQuery("#image").attr('src', data.images);
 		  jQuery("#Status").text(data.Status);
@@ -44,7 +46,9 @@ export var App = {
 		  jQuery("#Date_Record_Created").text("Record created on " + data.Date_Record_Created);
 		  jQuery("#Borough").text(data.Borough);
 		  jQuery("#Status").text(data.Status);
-			
+			jQuery.each(data.heat_map_info, function(index) {
+			heat_map_info.push(data.heat_map_info[index]);
+		        });
 
 		  var gender = "";
 		  if (data.Gender == "M") {
@@ -64,33 +68,25 @@ export var App = {
 
 		  lat = data.lat;
 		  long = data.long;
-	 });
 
-    var GoogleMapsLoader = require('google-maps');
+		  var GoogleMapsLoader = require('google-maps');
     GoogleMapsLoader.KEY = 'AIzaSyCP1cMFGxLSYdTbP9-r9TdGOn7Ft1E6JCE';
 	GoogleMapsLoader.LIBRARIES = ['visualization'];
 	GoogleMapsLoader.load(function(GoogleMaps){
 
 		var myLatlng = new google.maps.LatLng(lat, long);
 		var mapOptions = {
-			zoom: 9,
+			zoom: 15,
 			center: myLatlng
 		}
 
+		var heatmapData = [];
 		var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
-
-			/* Data points defined as an array of LatLng objects */
-			var heatmapData = [new google.maps.LatLng(lat, long)];
-			for (var a = 0; a < 30; a++) {
-		        heatmapData.push(new google.maps.LatLng(Number(lat)+Math.random()/10, Number(long)+Math.random()/10));
-		    }
-			for (var a = 0; a < 20; a++) {
-		        heatmapData.push(new google.maps.LatLng(Number(lat)+Math.random()/5, Number(long)+Math.random()/5));
-		    }
-			for (var a = 0; a < 10; a++) {
-		        heatmapData.push(new google.maps.LatLng(Number(lat)+Math.random()/3, Number(long)+Math.random()/3));
-		    } 
-
+			jQuery.each(heat_map_info, function(index) {
+				heatmapData.push(new google.maps.LatLng(heat_map_info[index].lat, heat_map_info[index].long));
+		        });
+			
+console.log(heatmapData);
 
 
 		var heatmap = new google.maps.visualization.HeatmapLayer({
@@ -98,10 +94,16 @@ export var App = {
 		});
 		heatmap.setMap(map);
 	}); 
+  	}); 
+	 });
+
+    
+    
 
   },
 profiles: function(){
-	var id = '3E3A373A3936383A3139';
+	var jQuery = require('jquery');
+  	jQuery( document ).ready(function() {
     var jQuery = require('jquery');
 
 	var lat, long;
@@ -126,6 +128,7 @@ profiles: function(){
 
 		var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
 		var markers =[];
+	var heat_map_info = [];
 
 		  var bounds = new google.maps.LatLngBounds();
 			var location = "http://192.168.226.62/404notfound-server/GetNearby?lat=53.546941137914956&long=-2.631838902300045";
@@ -137,8 +140,13 @@ profiles: function(){
 			          title: data[index].Unique_ID
 			        });
 			        markers.push(marker);
+console.log(data[index]);
+			        jQuery.each(data[index].heat_map_info, function(i) {
+console.log(data[index].heat_map_info);
+						heat_map_info.push(data[index].heat_map_info[i]);
+			        });
 			        var infowindow = new google.maps.InfoWindow({
-			          content: '<a href="/profile/' + data[index].Unique_ID + '">' + data[index].Forenames + ' ' + data[index].Surname + '</a>'
+			          content: '<a target=_blank" href="/profile/' + data[index].Unique_ID + '">' + data[index].Forenames + ' ' + data[index].Surname + '</a>'
 			        });
 			        marker.addListener('click', function() {
 			          infowindow.open(map, marker);
@@ -149,11 +157,19 @@ profiles: function(){
 			
 
 	 });
-			/* Data points defined as an array of LatLng objects */
-			var heatmapData = [new google.maps.LatLng(lat, long)];
-			console.log(bounds);
+		    var heatmapData=[];
+		    jQuery.each(heat_map_info, function(index) {
+				heatmapData.push(new google.maps.LatLng(heat_map_info[index].lat, heat_map_info[index].long));
+		        });
+			
+console.log(heat_map_info);
+			var heatmap = new google.maps.visualization.HeatmapLayer({
+  			data: heatmapData
+		});
+		heatmap.setMap(map);
 		
 	}); 
+	 });
 
   }
 }
