@@ -200,6 +200,7 @@ export var App = {
                 var markers = [];
                 var heat_map_info = [];
                 var images = [];
+                var imagesId = [];
                 var prev_infowindow;
                 var bounds = new google.maps.LatLngBounds();
                 var location = "http://192.168.226.62/404notfound-server/GetNearby?lat=53.546941137914956&long=-2.631838902300045";
@@ -234,6 +235,7 @@ export var App = {
                         map.fitBounds(bounds);
 
                         images.push(data[index].images[0]);
+                        imagesId.push(data[index].Unique_ID);
 
                		 });
 
@@ -253,7 +255,7 @@ export var App = {
 	                for (var i=0; i<images.length; i++){
 	                	if (counter<6){
 	                		if (images[i] != "http://2016rotarypresidentialconferencemanila.org/wp-content/uploads/2015/05/user-icon-silhouette.png"){
-	                			jQuery('#images_carousel').append('<img style="display:inline-block;padding:7px;height:230px;" src="'+images[i]+'">');
+	                			jQuery('#images_carousel').append('<a target="_blank" href="/profile/'+imagesId[i]+'"><img style="display:inline-block;padding:7px;height:230px;" src="'+images[i]+'"></a>');
 	                			counter++;
 	                		}
 	                	}
