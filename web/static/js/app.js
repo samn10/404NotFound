@@ -104,7 +104,7 @@ export var App = {
                     }
 
                     var heatmapData = [];
-                    var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+                    var map = new google.maps.Map(document.getElementById('map_canvas2'), mapOptions);
                     
                     jQuery.each(heat_map_info, function(index) {
                     	if (!(isNaN(heat_map_info[index].lat) && isNaN(heat_map_info[index].long))) {
@@ -179,11 +179,8 @@ export var App = {
 
             var lat, long;
 
-
-
-
-            lat = "53.546941137914956";
-            long = "2.631838902300045";
+            lat = "53.38675";
+            long = "-2.2836";
 
             var GoogleMapsLoader = require('google-maps');
             GoogleMapsLoader.KEY = 'AIzaSyCP1cMFGxLSYdTbP9-r9TdGOn7Ft1E6JCE';
@@ -192,7 +189,7 @@ export var App = {
 
                 var myLatlng = new google.maps.LatLng(lat, long);
                 var mapOptions = {
-                    zoom: 9,
+                    zoom: 8,
                     center: myLatlng
                 }
 
@@ -203,7 +200,7 @@ export var App = {
                 var imagesId = [];
                 var prev_infowindow;
                 var bounds = new google.maps.LatLngBounds();
-                var location = "http://192.168.226.62/404notfound-server/GetNearby?lat=53.546941137914956&long=-2.631838902300045";
+                var location = "http://192.168.226.62/404notfound-server/GetNearby?lat="+lat+"&long="+long+"";
                 jQuery.get(location, function(data, status) {
                     jQuery.each(data, function(index) {
                         var marker = new google.maps.Marker({
