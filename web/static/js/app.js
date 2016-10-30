@@ -44,7 +44,6 @@ export var App = {
                     }
 
                 }
-                
 
                 jQuery("#Status").text(data.Status);
                 jQuery("#Category").text("Category: " + data.Category);
