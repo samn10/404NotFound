@@ -48,6 +48,8 @@ export var App = {
                 jQuery("#Status").text(data.Status);
                 jQuery.each(data.heat_map_info, function(index) {
                     heat_map_info.push(data.heat_map_info[index]);
+                    		console.log("data.heat_map_info[index");
+                    		console.log(data.heat_map_info[index]);
                 });
 
                 var gender = "";
@@ -82,13 +84,62 @@ export var App = {
 
                     var heatmapData = [];
                     var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+                    
                     jQuery.each(heat_map_info, function(index) {
-                        heatmapData.push(new google.maps.LatLng(heat_map_info[index].lat, heat_map_info[index].long));
+                    	if (!(isNaN(heat_map_info[index].lat) && isNaN(heat_map_info[index].long))) {
+                     	   heatmapData.push(new google.maps.LatLng(heat_map_info[index].lat, heat_map_info[index].long));
+                    	}
                     });
 
-                    console.log(heatmapData);
+                    var marker = new google.maps.Marker({
+                        position: new google.maps.LatLng(lat, long),
+                        map: map
+                    });
 
+                    var infowindow = new google.maps.InfoWindow({
+                        content: 'Gone missing in here'
+                    });
 
+                    marker.addListener('click', function() {
+                        infowindow.open(map, marker);
+                    });
+
+                    google.maps.event.addListener(map, "click", function(event) {
+                        infowindow.close();
+                    });
+
+                    var fakeMarker;
+                    google.maps.event.addListener(map, "click", function(event) {
+                    	var startLocation = event.latLng;
+                    	if (fakeMarker) {
+                    		fakeMarker.setMap(null);
+                    	}
+                    	var image = {
+				          url: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+				          // This marker is 20 pixels wide by 32 pixels high.
+				          size: new google.maps.Size(20, 32),
+				          // The origin for this image is (0, 0).
+				          origin: new google.maps.Point(0, 0),
+				          // The anchor for this image is the base of the flagpole at (0, 32).
+				          anchor: new google.maps.Point(0, 32)
+				        };
+				        fakeMarker = new google.maps.Marker({
+				        	position: startLocation,
+				        	icon: image,
+				        	map: map
+				        });
+				        var markerLat = event.latLng.lat();
+        				var markerLng = event.latLng.lng();
+
+                    	var infowindow = new google.maps.InfoWindow({
+                        	content: 'oh '
+                    	});
+                    	infowindow.setContent('<a href="http://192.168.226.62/404notfound-server/AddLocation?Unique_ID='+data.Unique_ID+'&lat='+markerLat+'&long='+markerLng+'">Report sighting</a>');
+
+                        infowindow.open(map, fakeMarker);
+					});
+
+                    console.log(Object.keys(heatmapData).length);
                     var heatmap = new google.maps.visualization.HeatmapLayer({
                         data: heatmapData
                     });
@@ -162,14 +213,15 @@ export var App = {
                         map.fitBounds(bounds);
                     });
                     var heatmapData = [];
-                    jQuery.each(heat_map_info, function(index) {
-                        if (!(isNaN(heat_map_info[index].lat) && isNaN(heat_map_info[index].long))) {
-                            heatmapData.push(new google.maps.LatLng(heat_map_info[index].lat, heat_map_info[index].long));
-                        }
-                    });
+                    for (var i=0; i<heat_map_info.length; i++){
+                    	var latAux = heat_map_info[i].lat;
+                    	var longAux = heat_map_info[i].long;
+                    	heatmapData.push(new google.maps.LatLng(latAux,longAux));
+                    }
 
                     var heatmap = new google.maps.visualization.HeatmapLayer({
-                        data: heatmapData
+                        data: heatmapData,
+                        map: map
                     });
                     heatmap.setMap(map);
 
