@@ -29,7 +29,23 @@ export var App = {
             var location = "http://192.168.226.62/404notfound-server/GetProfile?Unique_ID=" + id;
             var heat_map_info = [];
             jQuery.get(location, function(data, status) {
-                jQuery("#image").attr('src', data.images);
+
+                    console.log(data.images.length);
+           
+                for(var i=0; i<data.images.length; i++) {
+                    if(i==0) {
+                        jQuery("#image").attr('src', data.images[0]);
+                    } else if(i<4) {
+                        jQuery("#images").append("<img id='image" + i + "' height='160' onerror='this.src=\'/images/profile/noImage.gif\'' width='160' src='" + data.images[i] + "'>" );
+                    } 
+                    else if(i>=4) {
+                        jQuery("#moreImages").attr('href', "#");
+                        jQuery("#moreImages").show();
+                    }
+
+                }
+                
+
                 jQuery("#Status").text(data.Status);
                 jQuery("#Category").text("Category: " + data.Category);
                 jQuery("#Output_Area").text(data.Output_Area);
