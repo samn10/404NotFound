@@ -32,6 +32,14 @@
 
 	</div>
 
+	<div id="addNotes">
+		<form style="margin-top: 0px; width: 95px;" action="http://192.168.226.62/404notfound-server/AddNote" method="GET" target="_blank">
+		  	<input type="textarea" name="note" placeholder="Add a new note... ">
+		  	<input type="hidden" name="Unique_ID" value="<%= @uniqueId %>">
+			<input type="submit" style="float: right" value="Add Note">
+		</form>
+	</div>
+
 	<div id="found" style="display:none;">
 		<span style="font-size:70px; display:inline-block;" >Found!</span>
 		<span style="font-size:30px; display:inline-block;" >Thanks to all for your collaboration</h4>
